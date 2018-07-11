@@ -11,7 +11,6 @@ public class Game {
     private int turn;
     private String winner;
     private int joinedPlayers = 0;
-    private boolean ready = false;
 
     public int getJoinedPlayers() {
         return joinedPlayers;
@@ -19,14 +18,6 @@ public class Game {
 
     public void setJoinedPlayers(int joinedPlayers) {
         this.joinedPlayers = joinedPlayers;
-    }
-
-    public boolean isReady() {
-        return ready;
-    }
-
-    public void setReady(boolean ready) {
-        this.ready = ready;
     }
 
     public String getWinner() {

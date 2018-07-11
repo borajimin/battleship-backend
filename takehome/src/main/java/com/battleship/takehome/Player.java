@@ -3,6 +3,7 @@ package com.battleship.takehome;
 import com.battleship.takehome.battle.Battle;
 import com.battleship.takehome.ship.Ship;
 import com.battleship.takehome.ship.coordinates.Coord;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
@@ -10,6 +11,15 @@ public class Player {
     private Battle battle;
     private Ship newShip;
     private int playerId;
+    private boolean ready = false;
+
+    public boolean isReady() {
+        return ready;
+    }
+
+    public void setReady(boolean ready) {
+        this.ready = ready;
+    }
 
     public boolean isValidCoord(Ship ship) {
         int[][] map = battle.getMap();
@@ -27,11 +37,6 @@ public class Player {
 
     public void setNewShip(Ship newShip) {
         this.newShip = newShip;
-    }
-
-    public Player(Battle battle, int playerId) {
-        this.battle = battle;
-        this.playerId = playerId;
     }
 
     public int getPlayerId() {
